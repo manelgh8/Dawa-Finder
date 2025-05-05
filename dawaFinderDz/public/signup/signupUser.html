@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Slide Navbar</title>
+	<link rel="stylesheet" href="stylesignup.css">
+	
+	<link rel="stylesheet" href="stylesignup.css">
+	<link rel="stylesheet" href="/css/animations.css">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/reset.css">
+	<link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+	<!-- Header Section -->
+<header class="header">
+	<div class="container">
+	  <nav class="navbar">
+		<div class="logo">
+		  <img src="/assets/logo.svg" alt="PharmaFind-DZ Logo" class="logo-img">
+		  <span class="logo-text">PharmaFind<span class="logo-dz"> DZ</span></span>
+		</div>
+		<div class="nav-links">
+		  <a href="#home" class="nav-link active">Home</a>
+		  <a href="#medications" class="nav-link">Medications</a>
+		  <a href="#pharmacies" class="nav-link">Pharmacies</a>
+		  <a href="#charity" class="nav-link">Charity</a>
+		  <a href="#about" class="nav-link">About</a>
+		</div>
+		<div class="nav-actions">
+		  
+		  <button class="login-btn" id="login-btn"><a href="signup/login.html">Login</a></button>
+		  
+		  <div class="dropdown">
+			<button class="register-btn" id="register-btn">Signup</button>
+			<div class="dropdown-content" id="dropdown-content">
+			  <a href="signup/signupUser.html">Signup as User</a>
+			  <a href="signup/signupPharmacy.html">Signup as Pharmacy</a>
+			</div>
+		  </div>
+		  
+		  
+		  
+		  
+		  
+		  <button class="menu-toggle" id="menu-toggle">
+			<span class="bar"></span>
+			<span class="bar"></span>
+			<span class="bar"></span>
+		  </button>
+		</div>
+	  </nav>
+	</div>
+  </header>
+
+	<div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+		<div class="signup">
+			<form onsubmit="return validateSignup()" action="/signupUser" method="POST">
+				<label for="chk" aria-hidden="true">Sign up</label>
+				<div class="box">
+				<input type="text" name="name" placeholder="User Name" required>
+				<input type="email" name="email" placeholder="Email" required>
+				<input type="text" name="phone" placeholder="Phone Number" required>
+				<input type="text" name="address" placeholder="address" required>
+				<input type="text" name="id_card" placeholder="ID Card Number" required>
+				<input type="password" name="pswd" id="signup-password" placeholder="Password" required>
+				</div>
+	
+				<button class="bton">Sign up</button>
+			</form>
+		</div>
+	</div>
+
+	<script>
+		function validateSignup() {
+			const form = document.querySelector(".signup");
+			const email = form.querySelector("input[name='email']").value;
+			const phone = form.querySelector("input[name='phone']").value;
+			const idCard = form.querySelector("input[name='id_card']").value;
+			const address = form.querySelector("input[name='address']").value;
+			const password = form.querySelector("input[name='pswd']").value;
+
+			if (!email.includes("@") || !email.includes(".")) {
+				alert("Invalid email!");
+				return false;
+			}
+
+			if (!/^\d{8,}$/.test(phone)) {
+				alert("Phone number must be at least 8 digits.");
+				return false;
+			}
+
+			if (idCard.trim() === "") {
+				alert("ID Card Number is required.");
+				return false;
+			}
+
+			if (password.length < 8) {
+				alert("Password must be at least 8 characters.");
+				return false;
+			}
+
+			alert("Signup successful!");
+			return true;
+		}
+
+		function togglePassword() {
+			const passwordInput = document.getElementById("signup-password");
+			passwordInput.type = passwordInput.type === "password" ? "text" : "password";
+		}
+
+		
+	</script>
+</body>
+</html>

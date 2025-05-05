@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Slide Navbar</title>
+	<link rel="stylesheet" href="/public/signup/stylesignup.css">
+	<link rel="stylesheet" href="/css/animations.css">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/reset.css">
+	<link rel="stylesheet" href="/css/responsive.css">
+   
+</head>
+<body>
+<!-- Header Section -->
+<header class="header">
+	<div class="container">
+	  <nav class="navbar">
+		<div class="logo">
+		  <img src="/assets/logo.svg" alt="PharmaFind-DZ Logo" class="logo-img">
+		  <span class="logo-text">PharmaFind<span class="logo-dz"> DZ</span></span>
+		</div>
+		<div class="nav-links">
+		  <a href="#home" class="nav-link active">Home</a>
+		  <a href="#medications" class="nav-link">Medications</a>
+		  <a href="#pharmacies" class="nav-link">Pharmacies</a>
+		  <a href="#charity" class="nav-link">Charity</a>
+		  <a href="#about" class="nav-link">About</a>
+		</div>
+		<div class="nav-actions">
+		  
+		  <button class="login-btn" id="login-btn"><a href="/public/signup/login.html">Login</a></button>
+		  
+		  <div class="dropdown">
+			<button class="register-btn" id="register-btn">Signup</button>
+			<div class="dropdown-content" id="dropdown-content">
+			  <a href="/public/signup/signupUser.html">Signup as User</a>
+			  <a href="/public/signup/signupPharmacy.html">Signup as Pharmacy</a>
+			</div>
+		  </div>
+		  <button class="menu-toggle" id="menu-toggle">
+			<span class="bar"></span>
+			<span class="bar"></span>
+			<span class="bar"></span>
+		  </button>
+		</div>
+	  </nav>
+	</div>
+  </header>
+
+
+
+	<div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+			<div class="signup">
+				<form onsubmit="return validateSignup()" action="/login">
+					<label for="chk" aria-hidden="true">Login</label>
+				
+					<input type="email" name="email" placeholder="Email or UserName" required="">
+					<input type="password" name="pswd" id="signup-password" placeholder="Password" required="">
+                    
+					<!--<button type="button" onclick="togglePassword()" class="show">Show password</button>-->
+
+					<button class="bton">Sign up</button>
+				</form>
+			</div>
+
+			
+	</div>
+
+
+
+	<script>
+		function validateSignup() {
+			const email = document.querySelector(".signup input[name='email']").value;
+			const password = document.querySelector(".signup input[name='pswd']").value;
+
+			if (!email.includes("@") || !email.includes(".")) {
+				alert("Invalid email !!!!");
+				return false;
+			}
+
+			if (password.length < 8) {
+				alert("Password must be at least 8 characters.");
+				return false;
+			}
+
+			alert("Signup successful!");
+			return true;
+		}
+		function togglePassword() {
+			const passwordInput = document.getElementById("signup-password");
+			if (passwordInput.type === "password") {
+				passwordInput.type = "text";
+			} else {
+				passwordInput.type = "password";
+			}
+		}
+
+
+		
+		</script>
+		
+		
+</body>
+</html>
+
+

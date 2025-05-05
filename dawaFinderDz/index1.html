@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PharmaFind-DZ | Find Medications & Pharmacies in Algeria</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="./js/main.js" type="module" defer></script>
+  </head>
+  <body>
+    
+    <div id="app">
+      <!-- Header Section -->
+      <header class="header">
+        <div class="container">
+          <nav class="navbar">
+            <div class="logo">
+              <img src="../assets/logo.svg" alt="PharmaFind-DZ Logo" class="logo-img">
+              <span class="logo-text">DawaFind<span class="logo-dz"> DZ</span></span>
+            </div>
+            <div class="nav-links">
+              <a href="#home" class="nav-link active">Home</a>
+              <a href="#medications" class="nav-link">Medications</a>
+              <a href="#pharmacies" class="nav-link">Pharmacies</a>
+              <a href="#charity" class="nav-link">Charity</a>
+              <a href="#about" class="nav-link">About</a>
+            </div>
+            <div class="nav-actions">
+              
+              <button class="login-btn" id="login-btn"><a href="/public/signup/login.html">Login</a></button>
+              
+              <div class="dropdown">
+                <button class="register-btn" id="register-btn">Signup</button>
+                <div class="dropdown-content" id="dropdown-content">
+                  <a href="/public/signup/signupUser.html">Signup as User</a>
+                  <a href="/public/signup/signupPharmacy.html">Signup as Pharmacy</a>
+                </div>
+              </div>
+              
+              
+              
+              
+              
+              <button class="menu-toggle" id="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+              </button>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Hero Section -->
+      <section class="hero" id="home">
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="hero-title">Find Medications & Pharmacies in Algeria</h1>
+            <p class="hero-subtitle">Search medications, locate pharmacies, and connect with healthcare resources all in one place.</p>
+            <div class="hero-search">
+              <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" placeholder="Search for medications or pharmacies..." class="search-input" id="hero-search-input">
+                <button class="search-btn" id="hero-search-btn">Search</button>
+              </div>
+            </div>
+            <div class="hero-actions">
+              <button class="btn primary-btn" id="find-meds-btn">
+               <i class="fas fa-pills"></i>
+                Find Medications
+              </button>
+              <button class="btn secondary-btn" id="find-pharmacy-btn">
+                <i class="fas fa-map-marker-alt"></i>
+                Locate Pharmacies
+              </button>
+            </div>
+          </div>
+          <div class="hero-image">
+            <!-- <img src="https://images.pexels.com/photos/3873193/pexels-photo-3873193.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Pharmacy Services" class="hero-img"> -->
+          </div>
+        </div>
+      
+      </section>
+
+      <!-- Features Section -->
+      <section class="features" id="features">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">How PharmaFind-DZ Helps You</h2>
+            <p class="section-description">Discover the features that make finding medications and pharmacies easier than ever</p>
+          </div>
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-database"></i>
+              </div>
+              <h3 class="feature-title">Comprehensive Database</h3>
+              <p class="feature-description">Access detailed information about medications including images, descriptions, side effects, and usage guides.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-map-marked-alt"></i>
+              </div>
+              <h3 class="feature-title">Pharmacy Locator</h3>
+              <p class="feature-description">Find the nearest pharmacies with your needed medications sorted by distance and availability.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-language"></i>
+              </div>
+              <h3 class="feature-title">Multilingual Support</h3>
+              <p class="feature-description">Use the application in Arabic, French, or English to suit your language preferences.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-hands-helping"></i>
+              </div>
+              <h3 class="feature-title">Donation Platform</h3>
+              <p class="feature-description">Donate or request unused medications and medical equipment through our charity platform.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Medications Preview Section -->
+      <section class="medications-preview" id="medications">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Popular Medications</h2>
+            <p class="section-description">Explore our database of available medications in Algeria</p>
+          </div>
+          <div class="medications-filter">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="prescription">Prescription</button>
+            <button class="filter-btn" data-filter="otc">Over-the-Counter</button>
+            <button class="filter-btn" data-filter="antibiotics">Antibiotics</button>
+            <button class="filter-btn" data-filter="chronic">Chronic Medications</button>
+          </div>
+          <div class="medications-grid" id="medications-grid">
+            <!-- Medications will be inserted here by JavaScript -->
+          </div>
+          <div class="section-action">
+            <a href="../medications.html" class="btn primary-btn">View All Medications</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pharmacies Preview Section -->
+      <section class="pharmacies-preview" id="pharmacies">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Find Nearby Pharmacies</h2>
+            <p class="section-description">Locate pharmacies in your area with the medications you need</p>
+          </div>
+          <div class="pharmacy-search">
+            <div class="search-container">
+              <i class="fas fa-map-marker-alt search-icon"></i>
+              <input type="text" placeholder="Enter your location..." class="search-input" id="location-input">
+              <button class="location-btn" id="get-location-btn">
+                <i class="fas fa-crosshairs"></i>
+              </button>
+            </div>
+          </div>
+          <div class="pharmacy-map" id="pharmacy-map">
+            <!-- Map will be inserted here by JavaScript -->
+            <div class="map-placeholder">
+              <i class="fas fa-map-marked-alt"></i>
+              <p>Map loading...</p>
+            </div>
+          </div>
+          <div class="pharmacy-list" id="pharmacy-list">
+            <!-- Pharmacies will be inserted here by JavaScript -->
+          </div>
+          <div class="section-action">
+            <a href="pharmacies.html" class="btn primary-btn">View All Pharmacies</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Charity Section -->
+      <section class="charity-preview" id="charity">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Medication Charity Platform</h2>
+            <p class="section-description">Donate unused medications or find donated medications and medical equipment</p>
+          </div>
+          <div class="charity-cards">
+            <div class="charity-card donate">
+              <div class="charity-icon">
+                <i class="fas fa-hand-holding-medical"></i>
+              </div>
+              <h3 class="charity-title">Donate Medications</h3>
+              <p class="charity-description">Help others by donating your unused, unexpired medications and medical equipment.</p>
+              <button class="btn secondary-btn">Donate Now</button>
+            </div>
+            <div class="charity-card request">
+              <div class="charity-icon">
+                <i class="fas fa-hand-holding-heart"></i>
+              </div>
+              <h3 class="charity-title">Request Donations</h3>
+              <p class="charity-description">Browse available donations or request specific medications and medical equipment.</p>
+              <button class="btn primary-btn">View Donations</button>
+            </div>
+          </div>
+          <div class="section-action">
+            <a href="charity.html" class="btn tertiary-btn">Learn More About Our Charity Program</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section class="about" id="about">
+        <div class="container">
+          <div class="about-content">
+            <div class="about-image">
+              <img src="https://images.pexels.com/photos/7579831/pexels-photo-7579831.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="About PharmaFind-DZ" class="about-img">
+            </div>
+            <div class="about-text">
+              <div class="section-header">
+                <h2 class="section-title">About PharmaFind-DZ</h2>
+              </div>
+              <p class="about-description">
+                PharmaFind-DZ is a web application designed to digitalize the pharmaceutical field in Algeria. Our mission is to spread awareness and connect consumers with the medications they need by providing a comprehensive database of available medicines and a network of registered pharmacies.
+              </p>
+              <p class="about-description">
+                Our vision for the future is an easy, efficient and affordable access to essential medicines for all Algerians. By digitalizing the pharmaceutical industry and fostering a community of informed users and well-stocked pharmacies, we're attempting to improve healthcare accessibility and empower individuals to take control of their well-being.
+              </p>
+              <div class="about-stats">
+                <div class="stat">
+                  <h3 class="stat-number">5000+</h3>
+                  <p class="stat-label">Medications</p>
+                </div>
+                <div class="stat">
+                  <h3 class="stat-number">1000+</h3>
+                  <p class="stat-label">Pharmacies</p>
+                </div>
+                <div class="stat">
+                  <h3 class="stat-number">50K+</h3>
+                  <p class="stat-label">Users</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta">
+        <div class="container">
+          <div class="cta-content">
+            <h2 class="cta-title">Join PharmaFind-DZ Today</h2>
+            <p class="cta-description">Register now to access personalized features, save favorite medications, and receive notifications when medications become available.</p>
+            <div class="cta-buttons">
+              <button class="btn primary-btn" id="cta-register-btn">Register as User</button>
+              <button class="btn secondary-btn" id="cta-pharmacy-btn">Register as Pharmacy</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer Section -->
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-logo">
+              <img src="./assets/logo.svg" alt="PharmaFind-DZ Logo" class="logo-img">
+              <span class="logo-text">PharmaFind<span class="logo-dz">-DZ</span></span>
+            </div>
+            <div class="footer-links">
+              <div class="footer-column">
+                <h3 class="footer-heading">Navigation</h3>
+                <ul class="footer-list">
+                  <li><a href="#home">Home</a></li>
+                  <li><a href="#medications">Medications</a></li>
+                  <li><a href="#pharmacies">Pharmacies</a></li>
+                  <li><a href="#charity">Charity</a></li>
+                  <li><a href="#about">About</a></li>
+                </ul>
+              </div>
+              <div class="footer-column">
+                <h3 class="footer-heading">Features</h3>
+                <ul class="footer-list">
+                  <li><a href="medications.html">Medication Database</a></li>
+                  <li><a href="pharmacies.html">Pharmacy Locator</a></li>
+                  <li><a href="charity.html">Donation Platform</a></li>
+                  <li><a href="profile.html">User Profiles</a></li>
+                </ul>
+              </div>
+              <div class="footer-column">
+                <h3 class="footer-heading">Contact</h3>
+                <ul class="footer-list contact-list">
+                  <li><i class="fas fa-envelope"></i> info@pharmafind-dz.com</li>
+                  <li><i class="fas fa-phone"></i> +213 XX XX XX XX</li>
+                  <li><i class="fas fa-map-marker-alt"></i> Algiers, Algeria</li>
+                </ul>
+              </div>
+              <div class="footer-column">
+                <h3 class="footer-heading">Follow Us</h3>
+                <div class="social-links">
+                  <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                  <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <div class="app-download">
+                  <h3 class="footer-heading">Coming Soon</h3>
+                  <div class="app-buttons">
+                    <a href="#" class="app-button">
+                      <i class="fab fa-google-play"></i>
+                      <span>Google Play</span>
+                    </a>
+                    <a href="#" class="app-button">
+                      <i class="fab fa-apple"></i>
+                      <span>App Store</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p class="copyright">© 2025 PharmaFind-DZ. All rights reserved.</p>
+            <div class="footer-bottom-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+              <a href="#">Cookie Policy</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <!-- Modals -->
+      <div class="modal-container" id="login-modal">
+        <div class="modal">
+          <div class="modal-header">
+            <h2>Login to PharmaFind-DZ</h2>
+            <button class="modal-close">&times;</button>
+          </div>
+          <div class="modal-body">
+            <form id="login-form" class="auth-form">
+              <div class="form-group">
+                <label for="login-email">Email</label>
+                <input type="email" id="login-email" placeholder="Enter your email" required>
+              </div>
+              <div class="form-group">
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" placeholder="Enter your password" required>
+                <div class="password-toggle">
+                  <i class="fas fa-eye"></i>
+                </div>
+              </div>
+              <div class="form-group remember-forgot">
+                <div class="remember-me">
+                  <input type="checkbox" id="remember-me">
+                  <label for="remember-me">Remember me</label>
+                </div>
+                <a href="#" class="forgot-password">Forgot password?</a>
+              </div>
+              <button type="submit" class="btn primary-btn btn-block">Login</button>
+            </form>
+            <div class="form-divider">
+              <span>or</span>
+            </div>
+            <div class="social-login">
+              <button class="btn social-btn google-btn">
+                <i class="fab fa-google"></i>
+                <span>Login with Google</span>
+              </button>
+              <button class="btn social-btn facebook-btn">
+                <i class="fab fa-facebook-f"></i>
+                <span>Login with Facebook</span>
+              </button>
+            </div>
+            <div class="auth-switch">
+              <p>Don't have an account? <a href="#" id="switch-to-register">Register</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-container" id="register-modal">
+        <div class="modal">
+          <div class="modal-header">
+            <h2>Create an Account</h2>
+            <button class="modal-close">&times;</button>
+          </div>
+          <div class="modal-body">
+            <form id="register-form" class="auth-form">
+              <div class="form-group">
+                <label for="register-name">Full Name</label>
+                <input type="text" id="register-name" placeholder="Enter your full name" required>
+              </div>
+              <div class="form-group">
+                <label for="register-email">Email</label>
+                <input type="email" id="register-email" placeholder="Enter your email" required>
+              </div>
+              <div class="form-group">
+                <label for="register-password">Password</label>
+                <input type="password" id="register-password" placeholder="Create a password" required>
+                <div class="password-toggle">
+                  <i class="fas fa-eye"></i>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="register-confirm-password">Confirm Password</label>
+                <input type="password" id="register-confirm-password" placeholder="Confirm your password" required>
+              </div>
+              <div class="form-group">
+                <div class="terms-checkbox">
+                  <input type="checkbox" id="terms-checkbox" required>
+                  <label for="terms-checkbox">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                </div>
+              </div>
+              <button type="submit" class="btn primary-btn btn-block">Create Account</button>
+            </form>
+            <div class="form-divider">
+              <span>or</span>
+            </div>
+            <div class="social-login">
+              <button class="btn social-btn google-btn">
+                <i class="fab fa-google"></i>
+                <span>Register with Google</span>
+              </button>
+              <button class="btn social-btn facebook-btn">
+                <i class="fab fa-facebook-f"></i>
+                <span>Register with Facebook</span>
+              </button>
+            </div>
+            <div class="auth-switch">
+              <p>Already have an account? <a href="#" id="switch-to-login">Login</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notification System -->
+    <div class="notification-container" id="notification-container"></div>
+
+    <!-- Create favicon.svg for new folder -->
+    <script>
+      const favicon = document.createElement('svg');
+      favicon.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+      favicon.setAttribute('width', '32');
+      favicon.setAttribute('height', '32');
+      favicon.setAttribute('viewBox', '0 0 32 32');
+      favicon.innerHTML = `
+        <circle cx="16" cy="16" r="16" fill="#0CB8B6"/>
+        <path d="M16,7c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9S20.97,7,16,7z M16,22.5c-3.59,0-6.5-2.91-6.5-6.5S12.41,9.5,16,9.5s6.5,2.91,6.5,6.5 S19.59,22.5,16,22.5z" fill="white"/>
+        <path d="M16,12c-2.21,0-4,1.79-4,4s1.79,4,4,4s4-1.79,4-4S18.21,12,16,12z" fill="white"/>
+        <path d="M19,16h-6" stroke="#0CB8B6" stroke-width="2" stroke-linecap="round"/>
+        <path d="M16,13v6" stroke="#0CB8B6" stroke-width="2" stroke-linecap="round"/>
+      `;
+
+      // Convert SVG to Data URL
+      const serializer = new XMLSerializer();
+      const svgString = serializer.serializeToString(favicon);
+      const svgURL = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svgString);
+
+      // Create a link element for the favicon and insert into document
+      const faviconLink = document.createElement('link');
+      faviconLink.setAttribute('rel', 'icon');
+      faviconLink.setAttribute('type', 'image/svg+xml');
+      faviconLink.setAttribute('href', svgURL);
+      document.head.appendChild(faviconLink);
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+     
+  function toggleDropdown() {
+    const dropdown = document.getElementById("dropdown-content");
+    dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+  }
+
+  // Close dropdown if clicked outside
+  window.addEventListener("click", function(event) {
+    const button = document.getElementById("register-btn");
+    const dropdown = document.getElementById("dropdown-content");
+
+    if (!button.contains(event.target) && !dropdown.contains(event.target)) {
+      dropdown.style.display = "none";
+    }
+  });
+
+  // Add event listener to the button
+  document.getElementById("register-btn").addEventListener("click", function(event) {
+    event.stopPropagation(); // Prevents window click from firing immediately
+    toggleDropdown();
+  });
+
+
+
+
+
+ 
+    </script>
+  </body>
+</html>
